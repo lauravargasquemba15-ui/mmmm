@@ -1,0 +1,242 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sensor Ultrasónico</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #101713;
+    color: white;
+}
+
+header {
+    background: #087b4b;
+    padding: 25px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 30px;
+}
+
+header p {
+    margin-top: 8px;
+}
+
+.contenedor {
+    width: 90%;
+    max-width: 1000px;
+    margin: 30px auto;
+}
+
+.imagen {
+    background: #1b2921;
+    border: 2px solid #20c878;
+    border-radius: 15px;
+    padding: 25px;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.imagen img {
+    display: block;
+    width: 280px;
+    max-width: 100%;
+    height: auto;
+    margin: 20px auto 0;
+    border-radius: 10px;
+    object-fit: contain;
+}
+
+.tarjetas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
+}
+
+.tarjeta {
+    background: #1b2921;
+    border: 1px solid #20c878;
+    border-radius: 14px;
+    padding: 22px;
+    transition: 0.3s;
+}
+
+.tarjeta:hover {
+    transform: translateY(-5px);
+    background: #213c2c;
+}
+
+.tarjeta h2 {
+    color: #20c878;
+    margin-bottom: 12px;
+    font-size: 21px;
+}
+
+.tarjeta p,
+.tarjeta li {
+    line-height: 1.6;
+    color: #e0e9e3;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+.boton {
+    display: block;
+    background: #20c878;
+    color: #101713;
+    border: none;
+    border-radius: 8px;
+    padding: 12px;
+    margin-top: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+}
+
+.boton:hover {
+    background: white;
+}
+
+.contenido {
+    display: none;
+    margin-top: 15px;
+    padding-top: 12px;
+    border-top: 1px solid #20c878;
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    background: #087b4b;
+    margin-top: 40px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>SENSOR ULTRASÓNICO</h1>
+    <p>Ficha técnica de componente electrónico</p>
+</header>
+
+<div class="contenedor">
+
+    <div class="imagen">
+        <h2>Imagen del componente</h2>
+
+        <img
+        src="sensor.png"
+        alt="Sensor ultrasónico HC-SR04">
+    </div>
+
+    <div class="tarjetas">
+
+        <div class="tarjeta">
+            <h2>¿Qué es?</h2>
+            <p>
+            El sensor ultrasónico HC-SR04 es un dispositivo
+            electrónico que permite medir la distancia entre
+            el sensor y un objeto sin necesidad de tocarlo.
+            </p>
+            <button class="boton"
+            onclick="mostrar('info1')">Ver más</button>
+            <div class="contenido" id="info1">
+                Funciona mediante ondas sonoras de alta
+                frecuencia que rebotan en los objetos.
+            </div>
+        </div>
+
+        <div class="tarjeta">
+            <h2>¿Para qué sirve?</h2>
+            <p>
+            Se utiliza para detectar objetos, medir distancias
+            y reconocer obstáculos en diferentes proyectos.
+            </p>
+            <button class="boton"
+            onclick="mostrar('info2')">Ver más</button>
+            <div class="contenido" id="info2">
+                <ul>
+                    <li>Robots inteligentes.</li>
+                    <li>Sistemas de seguridad.</li>
+                    <li>Medición de distancias.</li>
+                    <li>Detección de obstáculos.</li>
+                    <li>Proyectos de automatización.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="tarjeta">
+            <h2>Características</h2>
+            <p>
+            Es un sensor pequeño, económico y fácil de utilizar
+            en proyectos electrónicos.
+            </p>
+            <button class="boton"
+            onclick="mostrar('info3')">Ver más</button>
+            <div class="contenido" id="info3">
+                <ul>
+                    <li>Modelo: HC-SR04.</li>
+                    <li>Voltaje: 5 V.</li>
+                    <li>Frecuencia: 40 kHz.</li>
+                    <li>Alcance aproximado: 2 a 400 cm.</li>
+                    <li>Medición sin contacto.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="tarjeta">
+            <h2>Partes del sensor</h2>
+            <p>
+            Está compuesto por diferentes partes que permiten
+            enviar y recibir las ondas ultrasónicas.
+            </p>
+            <button class="boton"
+            onclick="mostrar('info4')">Ver más</button>
+            <div class="contenido" id="info4">
+                <ul>
+                    <li>Transmisor: envía las ondas.</li>
+                    <li>Receptor: recibe las ondas reflejadas.</li>
+                    <li>VCC: alimentación eléctrica.</li>
+                    <li>TRIG: activa la medición.</li>
+                    <li>ECHO: transmite la señal de respuesta.</li>
+                    <li>GND: conexión a tierra.</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<footer>
+    <p>Casillero organizador</p>
+    <p>Taller Laboratorio Técnica en Informatica</p>
+</footer>
+
+<script>
+function mostrar(id) {
+    const contenido = document.getElementById(id);
+
+    if (contenido.style.display === "block") {
+        contenido.style.display = "none";
+    } else {
+        contenido.style.display = "block";
+    }
+}
+</script>
+
+</body>
+</html>
